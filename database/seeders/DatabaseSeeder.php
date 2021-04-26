@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             FactSeeder::class,
             PortfolioSeeder::class,
             SkillSeeder::class,
+            ContactSeeders::class,
             ]);
         // $this->call([FactSeeder::class]);
         // $this->call([SkillSeeder::class]);

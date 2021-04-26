@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Fact;
 use App\Models\Portfolio;
 use App\Models\Skill;
@@ -15,7 +16,8 @@ class FrontController extends Controller
         $skills = Skill::all();
         $facts = Fact::All();
         $portfolio = Portfolio::all();
-        return view('home', compact('about','skills','facts','portfolio'));
+        $contacts = Contact::all();
+        return view('home', compact('about','skills','facts','portfolio','contacts'));
     }
 
     public function admin(){

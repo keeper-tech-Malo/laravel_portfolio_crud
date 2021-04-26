@@ -9,7 +9,7 @@ class AboutController extends Controller
 {
     public function index(){
         $about = About::all();
-        return view('backoffice.bo.indexAbout',compact('about'));
+        return view('backoffice.bo.about.indexAbout',compact('about'));
     }
     public function create(){
         return view('backoffice.bo.createAbout');
@@ -30,6 +30,22 @@ class AboutController extends Controller
             "email"=>["required", "email"],
             "freelance"=>["required"],
         ]);
+        
+        $about = new About();
+        $about->nom = $request->nom;
+        $about->prenom = $request->prenom;
+        $about->titre = $request->titre;
+        $about->description = $request->description;
+        $about->birthday = $request->birthday;
+        $about->website = $request->website;
+        $about->phone = $request->phone;
+        $about->city = $request->city;
+        $about->age = $request->age;
+        $about->degree = $request->degree;
+        $about->email = $request->email;
+        $about->freelance = $request->freelance;
+        $about->save();
+        return redirect()->route('about.index');
 
         
         
@@ -43,7 +59,7 @@ class AboutController extends Controller
     //edit
     public function edit(About $id){
         $about = $id;
-        return view ('backoffice.about.editAbout', compact('about'));
+        return view ('backoffice.bo.about.editAbout', compact('about'));
     }
 
     public function update(About $id, Request $request){
@@ -61,12 +77,27 @@ class AboutController extends Controller
             "email"=>["required", "email"],
             "freelance"=>["required"],
         ]);
+        $about = $id;
+        $about->nom = $request->nom;
+        $about->prenom = $request->prenom;
+        $about->titre = $request->titre;
+        $about->description = $request->description;
+        $about->birthday = $request->birthday;
+        $about->website = $request->website;
+        $about->phone = $request->phone;
+        $about->city = $request->city;
+        $about->age = $request->age;
+        $about->degree = $request->degree;
+        $about->email = $request->email;
+        $about->freelance = $request->freelance;
+        $about->save();
+        return redirect()->route('about.index');
         
     }
     //show
     public function show(About $id){
         $about = $id;
-        return view('backoffice.about.showAbout',compact('about'));
+        return view('backoffice.bo.about.showAbout',compact('about'));
     }
 
 }
