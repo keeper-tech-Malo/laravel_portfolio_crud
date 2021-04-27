@@ -2,7 +2,7 @@
 
         @include('partial.navBo')
 @section('content')
-        <h1 class="text-center">Backoffice</h1>
+        <h1 class="text-center pt-5">Backoffice</h1>
         <div class="container">
                 <div class="row ">
                         <div class="col-6">
