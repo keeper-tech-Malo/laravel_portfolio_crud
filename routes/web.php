@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -87,3 +88,21 @@ Route::put('/admin/portfolio/{id}/update', [PortfolioController::class, 'update'
 
     //show
 Route::get('/admin/portfolio/{id}', [PortfolioController::class, "show"])->name('portfolio.show');
+
+//service
+Route::get('/admin/service/', [ServiceController::class, "index"])->name('service.index');
+
+    //create
+Route::get('/admin/service/create', [ServiceController::class, "create"])->name('service.create');
+Route::post('/admin/service/store', [ServiceController::class, "store"])->name('service.store');
+    
+    //delete
+Route::delete('/admin/service/{id}/delete',[ServiceController::class, "destroy"])->name('service.destroy');
+    
+    //edit - update
+Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
+Route::put('/admin/service/{id}/update', [ServiceController::class, 'update'])->name('service.update');
+    
+    //show
+Route::get('/admin/service/{id}', [ServiceController::class, "show"])->name('service.show');
+

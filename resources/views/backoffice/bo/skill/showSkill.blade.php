@@ -11,14 +11,12 @@
                 <h3 class="text-center">Show </h3>
             </div>
             <div class="card-body">
-                <p><span class="font-weight-light">Compteur : </span>{{$fact->happy}}</p>
-                <p><span class="font-weight-light">Compteur : </span>{{$fact->project}}</p>
-                <p><span class="font-weight-light">Compteur : </span>{{$fact->support}}</p>
-                <p><span class="font-weight-light">Compteur : </span>{{$fact->work}}</p>
+                <p><span class="font-weight-light">Titre : </span>{{$skill->titre}}</p>
+                <p><span class="font-weight-light"> Pourcentage : </span>{{$skill->value}} %</p>
             </div>
             <div class="card-footer d-flex">
-                <a href={{route('fact.edit', $fact->id)}} class="btn btn-primary mx-1">editer</a>
-                <form action={{route('fact.destroy', $fact->id)}} method="post">
+                <a href={{route('skill.edit', $skill->id)}} class="btn btn-primary mx-1">editer</a>
+                <form action={{route('skill.destroy', $skill->id)}} method="post">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger mb-1">supprimer</button>

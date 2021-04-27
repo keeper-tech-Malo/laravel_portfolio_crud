@@ -17,18 +17,20 @@ class FactController extends Controller
     }
 
     public function store(Request $request){
-        //champs obligatoire
+        
         request()->validate([
-            "icon"=>["required"],
-            "count"=>["required", "integer"],
-            "description"=>["required"],
+            "happy"=>["required"],
+            "project"=>["required", "integer"],
+            "support"=>["required"],
+            "work"=>["required"],
         ]);
 
-        //mettre dans la db
+        
         $fact = new Fact();
-        $fact->icon = $request->icon;
-        $fact->count = $request->count;
-        $fact->description = $request->description;
+        $fact->happy = $request->happy;
+        $fact->project = $request->project;
+        $fact->support = $request->support;
+        $fact->work = $request->work;
         $fact->save();
         return redirect()->route('fact.index');
     }
@@ -46,18 +48,20 @@ class FactController extends Controller
     }
 
     public function update(Fact $id, Request $request){
-        //champs obligatoire
+        
         request()->validate([
-            "icon"=>["required"],
-            "count"=>["required", "integer"],
-            "description"=>["required"],
+            "happy"=>["required"],
+            "project"=>["required", "integer"],
+            "support"=>["required"],
+            "work"=>["required"],
         ]);
 
-        //mettre dans la db
+        
         $fact = $id;
-        $fact->icon = $request->icon;
-        $fact->count = $request->count;
-        $fact->description = $request->description;
+        $fact->happy = $request->happy;
+        $fact->project = $request->project;
+        $fact->support = $request->support;
+        $fact->work = $request->work;
         $fact->save();
         return redirect()->route('fact.index');
     }

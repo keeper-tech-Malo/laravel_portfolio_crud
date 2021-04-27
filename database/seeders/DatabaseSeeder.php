@@ -20,9 +20,8 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             SkillSeeder::class,
             ContactSeeders::class,
+            ServiceSeeders::class,
             ]);
-        // $this->call([FactSeeder::class]);
-        // $this->call([SkillSeeder::class]);
-        // $this->call([PortfolioSeeder::class]);
+        
     }
 }

@@ -35,12 +35,12 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->statut}}</td>
                             <td>
-                                <a href={{route('about.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
+                                <a href={{route('about.edit', $item->id)}} class="btn btn-primary mb-1">editer</a>
                                 <a href={{route('about.show', $item->id)}} class="btn btn-success mb-1">show</a>
                                 <form action={{route('about.destroy', $item->id)}} method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger mb-1">del</button>
+                                    <button class="btn btn-danger mb-1">supprimer</button>
                                 </form>
                             </td>
                         </tr>                                                
@@ -63,7 +63,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('about.create')}} class="btn btn-primary">Ajouter un nv membre</a>
+            <a href={{route('about.create')}} class="btn btn-primary">Ajouter un nouveau membre</a>
         </div>
     </section>
 @endsection

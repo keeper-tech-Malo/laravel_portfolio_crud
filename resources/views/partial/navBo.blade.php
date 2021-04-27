@@ -1,10 +1,11 @@
 <nav class="nav-menu">
-    <ul>
-    <li class="active"><a href="/"><i class="bx bx-home"></i> <span>Home</span></a></li>
-    <li><a href={{route("about.index")}}><i class="bx bx-user"></i> <span>About BackOffice</span></a></li>
-    <li><a href={{route("portfolio.index")}}><i class="bx bx-book-content"></i> Portfolio BackOffice</a></li>
-    <li><a href="/indexService"><i class="bx bx-server"></i> Services</a></li>
-    <li><a href="/indexContact"><i class="bx bx-envelope"></i> Contact</a></li>
+    <ul class="d-flex justify-content-center">
+    <li class="active"><a href="/"><i class="bx bx-home"></i> <span class="text-danger">Home</span></a></li>
+    <li><a href={{route("about.index")}}><i class="bx bx-user"></i> <span class="text-danger">About BackOffice</span></a></li>
+    <li><a href={{route("fact.index")}}><i class="bx bx-book-content"></i><span class="text-danger">fact BackOffice</span></a></li>
+    <li><a href={{route("portfolio.index")}}><i class="bx bx-book-content"></i><span class="text-danger">Portfolio BackOffice</span></a></li>
+    <li><a href={{route("service.index")}}><i class="bx bx-server"></i> <span class="text-danger">backoffice Services</span></a></li>
+    
     
 
     </ul>

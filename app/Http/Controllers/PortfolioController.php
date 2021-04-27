@@ -17,18 +17,18 @@ class PortfolioController extends Controller
     }
 
     public function store(Request $request){
-        //champs obligatoire
+        
         request()->validate([
             "filter"=>["required"],
             "lien"=>["required"],
             "titre"=>["required"],
         ]);
 
-        //mettre dans la db
+        
         $portfolio = new Portfolio();
+        $portfolio->titre = $request->titre;
         $portfolio->filter = $request->filter;
         $portfolio->lien = $request->lien;
-        $portfolio->titre = $request->titre;
         $portfolio->save();
         return redirect()->route('portfolio.index');
     }
@@ -46,18 +46,18 @@ class PortfolioController extends Controller
     }
 
     public function update(Portfolio $id, Request $request){
-        //champs obligatoire
+        
         request()->validate([
             "filter"=>["required"],
             "lien"=>["required"],
             "titre"=>["required"],
         ]);
 
-        //mettre dans la db
+        
         $portfolio = $id;
+        $portfolio->titre = $request->titre;
         $portfolio->filter = $request->filter;
         $portfolio->lien = $request->lien;
-        $portfolio->titre = $request->titre;
         $portfolio->save();
         return redirect()->route('portfolio.index');
     }

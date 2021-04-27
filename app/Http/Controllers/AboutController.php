@@ -12,7 +12,7 @@ class AboutController extends Controller
         return view('backoffice.bo.about.indexAbout',compact('about'));
     }
     public function create(){
-        return view('backoffice.bo.createAbout');
+        return view('backoffice.bo..about.createAbout');
     }
 
     public function store(Request $request){
