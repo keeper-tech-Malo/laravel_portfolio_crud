@@ -11,7 +11,7 @@
                                                 <h4>About</h4>
                                         </div>
                                         <div class="card-body">
-                                        <a class="btn btn-primary mx-auto" href={{ route('about.index') }}>Tableau</a>
+                                        <a class="btn btn-primary mx-auto" href={{ route('about.index') }}>Afficher</a>
                                         </div>
                                 </div>
                         </div>
@@ -21,7 +21,7 @@
                                                 <h4>Facts</h4>
                                         </div>
                                         <div class="card-body">
-                                                <a class="btn btn-primary mx-auto" href={{ route('fact.index') }}>Tableau</a>
+                                                <a class="btn btn-primary mx-auto" href={{ route('fact.index') }}>Afficher</a>
                                         </div>
                                 </div>
                         </div>
@@ -31,7 +31,7 @@
                                                 <h4>Portfolio</h4>
                                         </div>
                                         <div class="card-body">
-                                        <a class="btn btn-primary mx-auto" href={{ route('portfolio.index') }}>Tableau</a>
+                                        <a class="btn btn-primary mx-auto" href={{ route('portfolio.index') }}>Afficher</a>
                                         </div>
                                 </div>
                         </div>
@@ -41,7 +41,7 @@
                                                 <h4>Service</h4>
                                         </div>
                                         <div class="card-body">
-                                                <a class="btn btn-primary mx-auto" href={{ route('service.index') }}>Tableau</a>
+                                                <a class="btn btn-primary mx-auto" href={{ route('service.index') }}>Afficher</a>
                                         </div>
                                 </div>
                         </div>
@@ -51,7 +51,7 @@
                                                 <h4>Skills</h4>
                                         </div>
                                         <div class="card-body">
-                                        <a class="btn btn-primary mx-auto" href={{ route('skill.index') }}>Tableau</a>
+                                        <a class="btn btn-primary mx-auto" href={{ route('skill.index') }}>Afficher</a>
                                         </div>
                                 </div>
                         </div>
