@@ -36,7 +36,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('portfolio.create')}} class="btn btn-primary">Ajouter un nv projet</a>
+            <a href={{route('portfolio.create')}} class="btn btn-primary">Ajouter un nouveau projet</a>
         </div>
     </section>
 @endsection

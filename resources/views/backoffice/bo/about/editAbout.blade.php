@@ -75,7 +75,7 @@
 
             <div class="row my-2">
                 <div class="col">
-                    <input type="text" class="form-control @error('statut') is-invalid @enderror" value="{{$about->freelance}}" placeholder="Statut" name="freelanc">
+                    <input type="text" class="form-control @error('freelance') is-invalid @enderror" value="{{$about->freelance}}" placeholder="Statut" name="freelance">
                     @error('statut')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror

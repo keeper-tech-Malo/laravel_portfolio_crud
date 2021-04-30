@@ -73,7 +73,7 @@
 
             <div class="row my-2">
                 <div class="col">
-                    <input type="text" class="form-control @error('statut') is-invalid @enderror" placeholder="Statut" name="statut" value="{{ old('statut') }}">
+                    <input type="text" class="form-control @error('freelance') is-invalid @enderror" placeholder="Statut" name="statut" value="{{ old('freelance') }}">
                     @error('statut')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror

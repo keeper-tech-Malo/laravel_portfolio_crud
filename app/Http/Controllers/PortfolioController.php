@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -18,23 +19,30 @@ class PortfolioController extends Controller
 
     public function store(Request $request){
         
+        //Storage
+        Storage::put('public/img/', $request->file('img'));
+
         request()->validate([
             "filter"=>["required"],
             "lien"=>["required"],
             "titre"=>["required"],
         ]);
 
+
         
         $portfolio = new Portfolio();
         $portfolio->titre = $request->titre;
         $portfolio->filter = $request->filter;
         $portfolio->lien = $request->lien;
+        $portfolio->img = $request->file('img')->hashName();
         $portfolio->save();
         return redirect()->route('portfolio.index');
     }
 
+
     //delete
     public function destroy(Portfolio $id){
+        Storage::delete('public/img/'. $id->img);
         $id->delete();
         return redirect()->route('portfolio.index');
     }
