@@ -14,7 +14,7 @@
                         <th scope="col">Titre</th>
                         <th scope="col">Description</th>
                         <th scope="col">Lien de l'icone</th>
-                        <th scope="col">action</th>
+                        <th scope="col">Editer/Show/Supprime</th>
                     </tr>
                 </thead>
                 <tbody>

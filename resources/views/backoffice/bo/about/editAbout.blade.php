@@ -4,14 +4,25 @@
 @section('content')
     @include('partial.navBo')
     <div class="container">
-        <h3 class="text-center">Modifier {{$about->nom}}</h3>
-        <a href={{route('about.index')}} class="text-center">Back About</a>
-        <form action={{route('about.update', $about->id)}} method="post" class="w-75 mx-auto">
+        <h3 class="text-center">Modifier</h3>
+        <a href={{route('admin.index')}} class="text-center">Back About</a>
+        <form action={{route('about.update', $about->id)}} method="post" enctype="multipart/form-data"  class="w-75 mx-auto">
             @csrf
             @method('PUT')
+
             <div class="row">
+
+                <div class="form-group">
+                    <div class="col-4">
+                        <img src={{asset('img/'.$about->img)}} alt="photo" class="w-100">
+                    </div>
+                    <div class="col-4">
+                        <h5>Changer de photo</h5>
+                        <input type="file" class="form-control-file" name ="img">
+                    </div>
+                </div>
                 <div class="col">
-                    <input type="text" class="form-control @error('nom') is-invalid @enderror" value="{{$about->nom}} {{ old('nom') }}" placeholder="Nom"
+                    <input type="text" class="form-control @error('nom') is-invalid @enderror" value="{{$about->nom}} {{ old('nom') }}" placeholder="nom"
                         name="nom">
                     @error('nom')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
@@ -103,8 +114,9 @@
                 @error('description')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
-
             </div>
+            
+            
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>

@@ -10,28 +10,28 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="count">Compteur : </label>
+                <label for="count">happy : </label>
                 <input type="number" class="form-control  @error('count') is-invalid @enderror" value="{{$fact->happy}}" id="count" name="happy">
                 @error('count')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="count">Compteur : </label>
+                <label for="count">project : </label>
                 <input type="number" class="form-control  @error('count') is-invalid @enderror" value="{{$fact->project}}" id="count" name="project">
                 @error('count')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="count">Compteur : </label>
+                <label for="count">support : </label>
                 <input type="number" class="form-control  @error('count') is-invalid @enderror" value="{{$fact->support}}" id="count" name="support">
                 @error('count')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="count">Compteur : </label>
+                <label for="count">work : </label>
                 <input type="number" class="form-control  @error('count') is-invalid @enderror" value="{{$fact->work}}" id="count" name="work">
                 @error('count')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>

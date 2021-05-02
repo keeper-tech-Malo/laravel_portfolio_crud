@@ -18,7 +18,7 @@ class FrontController extends Controller
         $facts = Fact::All();
         $portfolio = Portfolio::all();
         $contacts = Contact::all();
-        $services = Service::all();
+        $services = Service::paginate(6)->fragment('services');
         return view('home', compact('about','skills','facts','portfolio','contacts','services',));
     }
 

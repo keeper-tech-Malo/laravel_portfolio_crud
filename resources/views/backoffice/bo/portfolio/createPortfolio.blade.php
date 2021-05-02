@@ -6,7 +6,7 @@
     <div class="container">
         <h3 class="text-center">Ajouter un nv projet</h3>
         <a href={{route('admin.index')}} class="text-center">Back admin</a>
-        <form action={{ route('portfolio.store') }} method="post" class="w-75 mx-auto">
+        <form action={{ route('portfolio.store') }} method="post" enctype="multipart/form-data" class="w-75 mx-auto">
             @csrf
             <div class="form-group">
                 <label for="titre">Nom du projet : </label>
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="lien">Lien de l'image</label>
-                <input type="text" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{ old('lien') }}" name="lien">
+                <input type="file" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{ old('lien') }}" name="lien">
                 @error('lien')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror

@@ -12,7 +12,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Titre</th>
                         <th scope="col">Pourcentage</th>
-                        <th scope="col">action</th>
+                        <th scope="col">Editer/Show/Supprime</th>
                     </tr>
                 </thead>
                 <tbody>

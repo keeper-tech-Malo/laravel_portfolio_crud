@@ -6,7 +6,7 @@
     <div class="container">
         <h3 class="text-center">Modifier {{$portfolio->nom}}</h3>
         <a href={{route('portfolio.index')}}>Back Portfolio</a>
-        <form action={{route('portfolio.update', $portfolio->id)}} method="post" class="w-75 mx-auto">
+        <form action={{route('portfolio.update', $portfolio->id)}} method="post" enctype="multipart/form-data" class="w-75 mx-auto">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="lien">Lien de l'image</label>
-                <input type="text" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{$portfolio->lien}}" name="lien">
+                <input type="file" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{$portfolio->lien}}" name="lien">
                 @error('lien')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror

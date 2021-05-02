@@ -18,7 +18,6 @@ class CreatePortfoliosTable extends Migration
             $table->string('titre', 50);
             $table->string('filter', 50);
             $table->string('lien', 50);
-            $table->string('img');
             $table->timestamps();
         });
     }

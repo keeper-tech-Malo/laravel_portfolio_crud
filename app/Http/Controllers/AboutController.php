@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public function index(){
-        $about = About::all();
-        return view('backoffice.bo.about.indexAbout',compact('about'));
+        $about = About::first();
+        return view('backoffice.bo.about.editAbout',compact('about'));
     }
     public function create(){
-        return view('backoffice.bo..about.createAbout');
+        return view('backoffice.bo.about.createAbout');
     }
 
     public function store(Request $request){
@@ -20,6 +20,7 @@ class AboutController extends Controller
             "nom"=>["required"],
             "prenom"=>["required"],
             "titre"=>["required"],
+            "img"=>["required"],
             "description"=>["required"],
             "birthday"=>["required", "date"],
             "website"=>["required"],
@@ -35,6 +36,7 @@ class AboutController extends Controller
         $about->nom = $request->nom;
         $about->prenom = $request->prenom;
         $about->titre = $request->titre;
+        $about->img = $request->img;
         $about->description = $request->description;
         $about->birthday = $request->birthday;
         $about->website = $request->website;
@@ -78,6 +80,12 @@ class AboutController extends Controller
             "freelance"=>["required"],
         ]);
         $about = $id;
+        if ($request->img != null) {
+            $request->file('img')->storePublicly('img/', 'public');
+            $about->image = $request->file('image')->hashName();
+            $about->save();
+        }
+        
         $about->nom = $request->nom;
         $about->prenom = $request->prenom;
         $about->titre = $request->titre;

@@ -18,37 +18,34 @@ class PortfolioController extends Controller
     }
 
     public function store(Request $request){
-        
-        //Storage
-        Storage::put('public/img/', $request->file('img'));
-
         request()->validate([
             "filter"=>["required"],
             "lien"=>["required"],
             "titre"=>["required"],
         ]);
-
-
+        
         
         $portfolio = new Portfolio();
+        $request->file('lien')->storePublicly('img/portfolio/','public');
+        $portfolio->lien = $request->file('lien')->hashName();
+        
+        
         $portfolio->titre = $request->titre;
         $portfolio->filter = $request->filter;
-        $portfolio->lien = $request->lien;
-        $portfolio->img = $request->file('img')->hashName();
         $portfolio->save();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('success', 'Projet rajouter');
     }
 
 
     //delete
     public function destroy(Portfolio $id){
-        Storage::delete('public/img/'. $id->img);
         $id->delete();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('warning', 'projet supprimé!');
     }
 
     //edit
     public function edit(Portfolio $id){
+        
         $portfolio = $id;
         return view ('backoffice.bo.portfolio.editPortfolio', compact('portfolio'));
     }
@@ -60,14 +57,18 @@ class PortfolioController extends Controller
             "lien"=>["required"],
             "titre"=>["required"],
         ]);
-
-        
         $portfolio = $id;
+        if($request->file('lien') != null) {
+            //storage
+            // Storage::disk('public')->delete('img/portfolio/'.$id->lien);
+            $request->file('lien')->storePublicly('img/portfolio/','public');
+            //db
+            $portfolio->lien = $request->file('lien')->hashname();
+        }
         $portfolio->titre = $request->titre;
         $portfolio->filter = $request->filter;
-        $portfolio->lien = $request->lien;
         $portfolio->save();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('success', 'projet édité');
     }
 
     //show
