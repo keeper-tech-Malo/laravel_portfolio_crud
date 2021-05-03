@@ -13,7 +13,7 @@
                         <th scope="col">Titre</th>
                         <th scope="col">Filtre</th>
                         <th scope="col">Lien de l'image</th>
-                        <th scope="col">Editer/Show/Supprime</th>
+                        <th scope="col">Editer/Show/Supprime/telecharger</th>
                     </tr>
                 </thead>
                 <tbody>
