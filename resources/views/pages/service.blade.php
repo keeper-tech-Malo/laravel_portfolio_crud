@@ -13,12 +13,13 @@
                 
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="{{$service->icon}}"></i></div>
-            <h4 class="title"><a href="">{{$service->title}}</a></h4>
-            <p class="description">{{$service->text}}</p>
+            <h4 class="title"><a href="">{{$service->titre}}</a></h4>
+            <p class="text">{{$service->description}}</p>
             </div>
             @endforeach
             
         </div>
+        {{$services->links()}}
 
     </div>
 </section><!-- End Services Section -->

@@ -76,4 +76,8 @@ class PortfolioController extends Controller
         $portfolio = $id;
         return view('backoffice.bo.portfolio.showPortfolio',compact('portfolio'));
     }
+    public function download(Portfolio $id){
+        
+        return Storage::disk('public')->download('img/portfolio/' . $id->lien);
+    }
 }

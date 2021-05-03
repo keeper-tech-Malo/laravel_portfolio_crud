@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Fact;
 use App\Models\Portfolio;
 use App\Models\Skill;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller

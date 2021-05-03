@@ -11,8 +11,8 @@
                 <h3 class="text-center">Show </h3>
             </div>
             <div class="card-body">
-                <p><span class="font-weight-light">Titre : </span>{{$service->titre}}</p>
-                <p><span class="font-weight-light"> Description : </span>{{$service->description}}</p>
+                <p><span class="font-weight-light">Titre : </span>{{$service->title}}</p>
+                <p><span class="font-weight-light"> Description : </span>{{$service->text}}</p>
                 <p><span class="font-weight-light">Lien de l'icone : </span>{{$service->icon}}</p>
             </div>
             <div class="card-footer d-flex">

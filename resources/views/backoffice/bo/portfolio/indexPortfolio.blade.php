@@ -26,6 +26,7 @@
                             <td>
                                 <a href={{route('portfolio.edit', $item->id)}} class="btn btn-primary mb-1">editer</a>
                                 <a href={{route('portfolio.show', $item->id)}} class="btn btn-success mb-1">show</a>
+                                <a href="{{ route('portfolio.download', $item->id) }}" class="btn btn-warning">Télécharger</a>
                                 <form action={{route('portfolio.destroy', $item->id)}} method="post">
                                     @csrf
                                     @method('DELETE')

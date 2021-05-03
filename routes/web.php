@@ -88,6 +88,9 @@ Route::put('/admin/portfolio/{id}/update', [PortfolioController::class, 'update'
 
     //show
 Route::get('/admin/portfolio/{id}', [PortfolioController::class, "show"])->name('portfolio.show');
+    //donwload
+Route::get('/download/{id}/portfolio', [PortfolioController::class, 'download'])->name('portfolio.download');
+
 
 //service
 Route::get('/admin/service/', [ServiceController::class, "index"])->name('service.index');
