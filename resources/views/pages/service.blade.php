@@ -19,7 +19,7 @@
             @endforeach
             
         </div>
-        {{$services->links()}}
+        {{$services->links('pagination::bootstrap-4')}}
 
     </div>
 </section><!-- End Services Section -->
